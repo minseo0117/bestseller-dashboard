@@ -18,10 +18,14 @@ header .badge{background:#F5FCF7;border-color:#C8E3D0}
 /* 가격 열의 제목과 값 모두 오른쪽 정렬합니다. 가격은 숫자 포맷터로 천 단위 쉼표를 표시합니다. */
 th[data-key="price"],th[data-key="price"] button,td:last-child.numeric{text-align:right}
 @media(max-width:850px){header{padding:24px 20px}}
+/* 기준 시점은 제목 옆 작은 글씨로 표시하고 좁은 화면에서는 줄바꿈합니다. */
+.title-row{display:flex;align-items:baseline;gap:8px 16px;flex-wrap:wrap}
+.reference-date{font-size:13px;font-weight:400;color:#365B43;white-space:nowrap}
 </style>
 </head>
 <body><main>
-<header><div class="eyebrow">BOOK DATA · OVERVIEW</div><h1>도서 데이터 대시보드</h1><p>가격 분포부터 출판사 구성까지, 제공된 도서 목록을 한눈에 살펴보세요.</p><span class="badge">제공 CSV 기준 · 50개 항목</span></header>
+<header><div class="eyebrow">BOOK DATA · OVERVIEW</div><!-- 제목 옆에 고정된 데이터 기준 시점을 작게 표시합니다. -->
+<div class="title-row"><h1>도서 데이터 대시보드</h1><span class="reference-date">2026년 10월 기준</span></div><p>가격 분포부터 출판사 구성까지, 제공된 도서 목록을 한눈에 살펴보세요.</p><span class="badge">제공 CSV 기준 · 50개 항목</span></header>
 <!-- 요약 카드: 검색 여부와 관계없이 전체 데이터 기준으로 집계합니다. -->
 <section class="kpis" aria-label="전체 도서 요약">
 <div class="card"><div class="kpi-label">전체 도서 수</div><div class="kpi-value" id="total"></div><div class="kpi-note">세트 상품도 1개 항목으로 집계</div></div>
